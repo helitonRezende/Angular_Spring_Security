@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <!-- Configura rotas Spring Security -->  
+  <script src="./assets/urlSecurity.js"></script> 
+  <input type="hidden" value="" id="urlSecurity">
+  <script>document.getElementById('urlSecurity').value = securityURL();</script>
+</head>
+<body class="loader">
+  <app-root>
+    <div class="loader-nave"></div>
+  </app-root>
+</body>
+</html>

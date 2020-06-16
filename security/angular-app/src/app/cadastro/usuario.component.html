@@ -1,0 +1,85 @@
+<h1>Atualização Tabela Usuário</h1>
+
+<!-- Form Usuario -->
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="addUsuario()">
+    <input type="hidden" formControlName="id"/>
+    <table>
+      <tr>
+        <td>
+          <label>Nome:</label>
+        </td>
+        <td>
+          <input class="form-control" type="text" name="nome" formControlName="nome"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Login:</label>
+        </td>
+        <td>
+          <input class="form-control" type="text" name="login" formControlName="login" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Senha:</label>
+        </td>
+        <td>
+          <input class="form-control" type="password" name="senha" formControlName="senha" />
+        </td>
+      </tr>    
+    </table>
+    <p></p>
+    <table>
+      <tr>
+        <td>
+          <div class="buttonLoading">          
+            <div>
+              <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Salvar</button>
+              <div class="loader-app"></div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </form>
+  
+  <!-- Lista Usuario -->
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Login</th>
+        <th>Senha</th>
+        <th>Editar</th>
+        <th>Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{usuario.id}}</td>
+        <td>{{usuario.nome}}</td>
+        <td>{{usuario.login}}</td>
+        <td>{{usuario.senha}}</td>
+        <td>
+          <div class="buttonLoading">
+            <div>
+              <button class="btn btn-primary" (click)="getUsuarioID(usuario.id)">Editar</button>
+              <div class="loader-app"></div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="buttonLoading">
+            <div>
+              <button class="btn btn-primary" (click)="delUsuario(usuario.id)">Deletar</button>
+              <div class="loader-app"></div>
+            </div>
+          </div>
+        </td>      
+      </tr>
+    </tbody>
+  </table>
+</div>

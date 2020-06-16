@@ -1,0 +1,52 @@
+<!-- Menu somente autorizado Token -->
+<div *ngIf="showMenu">
+  <nav class="main-menu">
+    <div class="btn-nave"></div>
+    <ul>
+      <!-- Home -->
+      <li>
+        <div class="naveLoading">
+          <div>
+            <a routerLink="/home">
+              <i class="fa"></i>
+              <span class="nav-text">
+                  Home
+              </span>
+            </a>
+            <div class="loader-nave"></div>
+          </div>
+        </div>
+      </li>
+      <!-- Cadastro Usuario -->
+      <li>
+        <div class="naveLoading">
+          <div>
+            <a routerLink="/usuario">
+              <i class="fa"></i>
+              <span class="nav-text">
+                  Usuário
+              </span>
+            </a>
+            <div class="loader-nave"></div>
+          </div>
+        </div>
+      </li>
+      <!-- Logout -->
+      <li>
+        <div class="naveLoading">
+          <div>
+              <a href="javascript:securityLogout()">
+              <i class="fa"></i>
+              <span class="nav-text">
+                Logout
+              </span>
+            </a>
+            <div class="loader-nave"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div>
+<!-- rotas Angular -->
+<router-outlet></router-outlet>
